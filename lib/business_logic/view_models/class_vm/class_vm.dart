@@ -61,7 +61,7 @@ class ClassViewModel extends BaseNotifier {
       }
 
     } catch (e) {
-
+      General.showToast2(message: e.toString(),context: context);
       Logger().e(e.toString());
       setError();
     }
@@ -111,7 +111,7 @@ class ClassViewModel extends BaseNotifier {
      // then get grades after update
      getClasses();
    } catch (e) {
-
+     General.showToast2(message: e.toString(),context: context);
      Logger().e(e.toString());
      setError();
    }

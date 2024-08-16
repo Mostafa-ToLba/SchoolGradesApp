@@ -56,7 +56,7 @@ class GradesViewModel extends BaseNotifier {
       // then get grades after update
       getGrades();
     } catch (e) {
-
+      General.showToast2(message: e.toString(),context: context);
       Logger().e(e.toString());
       setError();
     }
@@ -100,7 +100,7 @@ class GradesViewModel extends BaseNotifier {
     };
     setBusy();
     try {
-      Response<dynamic> res = await api.addGrades(body: body);
+      Response res = await api.addGrades(body: body);
       if (res.statusCode == 200 || res.statusCode == 201) {
         General.showToast(
           message: 'grade added successfully',
@@ -119,7 +119,7 @@ class GradesViewModel extends BaseNotifier {
       }
       getGrades();
     } catch (e) {
-
+      General.showToast2(message: e.toString(),context: context);
       Logger().e(e.toString());
       setError();
     }
